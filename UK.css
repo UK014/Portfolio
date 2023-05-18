@@ -238,3 +238,71 @@ h3{
 a{
     text-decoration: none;
 }
+#prj-1:hover {
+    animation: hop 0.5s;
+  }
+  #prj-2:hover {
+    animation: hop 0.5s;
+  }
+  #prj-3:hover {
+    animation: hop 0.5s;
+  }
+  #prj-4:hover {
+    animation: hop 0.5s;
+  }  
+  @keyframes hop {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-10px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+  .cube {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  animation: rotateCube 10s infinite linear;
+}
+
+.cube-face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+  border: 1px solid black;
+  transform-origin: center center;
+}
+
+.cube-face.front {
+  transform: translateZ(100px);
+}
+
+.cube-face.back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.cube-face.right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.cube-face.left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.cube-face.top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.cube-face.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+@keyframes rotateCube {
+  0% {
+    transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg);
+  }
+}
